@@ -18,7 +18,8 @@ def get():
     usd_to_brl *= 0.95
 
     real = upland_usd * upland_tax * usd_to_brl
-    print(real)
+
+    result.delete(1.0,END)
 
     result.insert(INSERT,f"You're gonna get about {real:.2f} Reais")
 
@@ -29,11 +30,13 @@ root.geometry("300x200")
 root.title("Calculadora")
 root.configure(background="#00A0D0")
 
-root_dolls = Entry(root,text="How many dollars you have in Upland: ",font="arial",fg="black", bg="white")
-root_dolls.place(x=30, y=20)
+root_header = Label(text="How many dollars you have in Upland: ",font=("arial,",10),fg="black", bg="#00A0D0")
+root_header.place(x=30,y=15)
+root_dolls = Entry(root)
+root_dolls.place(x=90, y=40,height=30)
 
-result = Label(root,height=2,width=34,font=("arial",10))
-result.place(x=30,y=150)
+result = Text(root,height=2,width=34,font=("arial",10),bd=0,bg="#00A0D0")
+result.place(x=30,y=120)
 
 
 button = Button(text='Clique aqui',command=get,bg="lightgrey")
