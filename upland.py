@@ -25,22 +25,24 @@ def get():
 
 #UI
 
-root = Tk()
-root.geometry("300x200")
-root.title("Calculadora")
-root.configure(background="#00A0D0")
+def main():
+    root = Tk()
+    root.geometry("300x200")
+    root.title("Calculadora")
+    root.configure(background="#00A0D0")
 
-root_header = Label(text="How many dollars you have in Upland: ",font=("arial,",10),fg="black", bg="#00A0D0")
-root_header.place(x=30,y=15)
-root_dolls = Entry(root)
-root_dolls.place(x=90, y=40,height=30)
+    root_header = Label(text="How many dollars you have in Upland: ",font=("arial,",10),fg="black", bg="#00A0D0")
+    root_header.place(x=30,y=15)
+    root_dolls = Entry(root)
+    root_dolls.place(x=90, y=40,height=30)
 
-result = Text(root,height=2,width=34,font=("arial",10),bd=0,bg="#00A0D0")
-result.place(x=30,y=120)
-
-
-button = Button(text='Clique aqui',command=get,bg="lightgrey")
-button.place(x=120, y=75,height=30,width=75)
+    result = Text(root,height=2,width=34,font=("arial",10),bd=0,bg="#00A0D0")
+    result.place(x=30,y=120)
 
 
-root.mainloop()
+    button = Button(text='Clique aqui',command=get,bg="lightgrey")
+    button.place(x=120, y=75,height=30,width=75)
+
+    root.mainloop()
+
+main()
